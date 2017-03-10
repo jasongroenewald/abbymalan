@@ -1,0 +1,110 @@
+#meta-footer {
+	border-top: 1px solid #E1E0E1;
+	@include content_padding_alt();
+	text-align: center;
+	background: white;
+
+	ul {
+		@include clear();
+		@include stack();
+		display: inline-block;
+
+		li {	
+			display: inline-block;
+			vertical-align: middle;
+
+			@media (max-width: $screen-xs-max) {
+				padding: 10px 0;
+				text-align: center;
+			}
+
+			@media (min-width: $screen-sm-min) {
+				margin-right: 60px;
+
+				&:last-of-type {
+					margin-right: 0 !important;
+				}
+			}
+
+			@media (max-width: $screen-xs-max) {
+				width: 100%;
+			}
+
+			a {
+				color: $content;
+				font-family: 'Source Sans Pro', sans-serif;
+				font-weight: bold;
+				text-transform: uppercase;
+				@include mq(font-size, "10px",'',"10px",'',"11px","12px");
+				@include animation();
+				cursor: pointer;
+
+				&:hover {
+					color: $primary;
+					@include animation();
+				}
+			}
+		}
+	}
+}
+
+#footer {
+	background: white;
+	border-top: 1px solid #E1E0E1;
+	padding: 40px 0;
+	text-align: center;
+	border-bottom: 5px solid $primary;
+
+	.legal {
+		@media (max-width: $screen-xs-max) {
+			text-align: center;
+
+			p {
+				text-align: center;
+			}
+		}
+		
+		@media (min-width: $screen-sm-min) {
+			text-align: left;
+
+			p {
+				text-align: left;
+			}
+		}
+	}
+
+	p, a {
+		color: darken($chalice,20%);
+		@include mq(font-size, "10px",'',"10px",'',"11px","11px");
+		font-family: 'Source Sans Pro', sans-serif;
+	}
+
+	.social-media-company {
+		@include clear();
+		@include stack();
+		display: inline-block;
+
+		@media (max-width: $screen-xs-max) {
+			margin-top: 30px !important;
+		}
+
+		li {	
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0 20px;
+
+			&:hover {
+				a, .fa {
+					color: $primary;
+					@include animation();
+				}
+			}
+
+			a, .fa {
+				color: $chalice;
+				font-size: 25px;
+				@include animation();
+			}
+		}
+	}
+}

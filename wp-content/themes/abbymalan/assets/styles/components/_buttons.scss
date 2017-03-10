@@ -1,0 +1,35 @@
+.button, input[type=button], input[type=reset], input[type=submit]  {
+	margin-top: 30px;
+	display: inline-block;
+	text-align: center;
+	text-transform: uppercase;
+	line-height: 47px;
+	padding: 0 20px;
+	@include animation();
+	cursor: pointer;
+	border: none !important;
+	color: white !important;
+	font-family: 'Source Sans Pro', sans-serif;
+	background: $content;
+	font-weight: bold;
+	letter-spacing: 1px;
+	@include mq(font-size, "13px",'',"13px",'',"14px","14px");
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.2);
+
+	&:hover {
+		background: $primary;
+		box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.4);
+		-webkit-box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.4);
+		-moz-box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.4);
+		@include animation();
+	}
+
+	@media (max-width: $screen-xs-max) {
+		width: 100%;
+	}
+}

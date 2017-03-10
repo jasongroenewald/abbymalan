@@ -1,0 +1,122 @@
+#main_logo {
+	display: inline-block;
+	vertical-align: middle;
+
+	@media (max-width: $screen-xs-max) {
+		width: 197px;
+		height: 44px;
+	}
+
+	@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+		width: 269px;
+		height: 60px;
+	}
+
+	@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+		width: 314px;
+		height: 70px;
+	}
+
+	@media (min-width: $screen-lg-min) {
+		width: 360px;
+		height: 80px;
+	}
+}
+
+.sub-meta-navigation {
+	@include clear();
+	@include stack();
+	margin-top: 30px !important;
+	display: inline-block;
+	width: 100%;
+
+	@media (max-width: $screen-xs-max) {
+		display: none;
+	}
+
+	li {
+		margin-right: 40px;
+		display: inline-block;
+		vertical-align: middle;
+		@include calc(width, "(100% / 3) - 35px");
+
+		&:last-of-type {
+			margin-right: 0 !important;
+		}
+
+		a {
+			font-size: 13px;
+    		color: $content;
+		}
+	}
+}
+
+#header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 30px 0;
+	z-index: 120;
+
+	#menu_toggle {
+		position: relative;
+		z-index: 2;
+		-webkit-transition: margin-top ease 350ms;
+		transition: margin-top ease 350ms;
+		cursor: pointer;
+		height: 13px;
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 30px;
+
+		&:hover {
+			span {
+				@include animation();
+
+				background: $primary;
+
+				&:before, &:after {
+					background: $primary;
+					@include animation();
+				}
+			}
+		}
+
+		span {	
+			cursor: pointer;
+			top: 6px;
+			height: 2px;
+			width: 25px;
+			background-color: $content;
+			display: block;
+			content: "";
+			position: relative;
+			@include animation();
+
+			&:before {
+				height: 2px;
+				width: 25px;
+				background-color: $content;
+				display: block;
+				content: "";
+				top: -6px;
+				position: relative;
+				@include animation();
+				cursor: pointer;
+			}
+
+			&:after {
+				top: 4px;
+				height: 2px;
+				width: 25px;
+				background-color: $content;
+				display: block;
+				content: "";
+				position: relative;
+				@include animation();
+				cursor: pointer;
+			}
+		}
+	}
+}
