@@ -90,6 +90,16 @@ header.page-header {
 	}
 
 	.card {
+		a {
+			width: 100%;
+		}
+		
+		@media (max-width: $screen-sm-max) {
+			&:last-of-type { 
+				display: none !important;
+			}
+		}
+
 		@media (min-width: $screen-sm-min) {
 			margin-bottom: 0 !important;
 		}
@@ -143,12 +153,12 @@ header.page-header {
 }
 
 .top-quote {
-	top: 0;
+	bottom: 45px;
 	left: 0;
 }
 
 .bottom-quote {
-	bottom: 0;
+	top: -60px;
 	right: 0;
 }
 
@@ -156,7 +166,7 @@ header.page-header {
 	font-family: 'Lora', serif;
 	font-size: 400px;
 	position: absolute;
-	opacity: 0.2;
+	opacity: 0.1;
 	color: white;
 }
 
@@ -179,6 +189,14 @@ header.page-header {
 		background: $cloud;
 		text-align: center;
 		margin-bottom: 100px;
+
+		p {
+			color: rgba(255,255,255,0.7);
+		}
+
+		h3 {
+			color: white;
+		}
 	}
 
 	&.testimonial-small {
@@ -336,6 +354,10 @@ header.page-header {
 	overflow: hidden;
 	background: $primary;
 	text-align: center;
+	-webkit-background-size: cover !important;
+	-moz-background-size: cover !important;
+	-o-background-size: cover !important;
+	background-size: cover !important;
 
 	img {
 		width: 100%;

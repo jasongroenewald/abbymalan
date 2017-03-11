@@ -19,6 +19,34 @@
     'common': {
       init: function() {
 
+        function equalHeight(group) {
+          if (Modernizr.mq('only screen and (min-width: 768px)')) {
+            group.removeAttr('style'); 
+            var tallest = 0;
+
+            group.each(function() { 
+              tallest = Math.max($(this).height(),tallest); 
+            });
+
+            group.height(tallest); 
+          } else {
+            group.removeAttr('style');
+          }
+        }
+
+        function balanceHeight() {
+    
+            $(".two-row").each(function() {
+              equalHeight($(this).find(".card .inner"));
+            });
+        }
+
+        balanceHeight();
+
+        $( window ).resize(function() {
+            balanceHeight();
+        });
+
         $('a[href*="#"]:not([href="#"]):not(blank)').click(function() {
           if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
             var target = $(this.hash);
@@ -30,6 +58,25 @@
               return false;
             }
           }
+        });
+
+        $('.social-sharing-click').click(function() {
+          var URL = $(this).attr("href");
+          var title = $(this).attr("title");
+          
+          if(title == 'Share on Twitter') {
+          window.open(URL, title, 'width=550,height=235');  
+          }
+
+          if(title == 'Share on Facebook') {
+          window.open(URL, title, 'width=580,height=296');  
+          }
+
+          if(title == 'Share on Google+') {
+          window.open(URL, title, 'width=490,height=530');  
+          }
+
+          return false;
         });
 
         if( $(".floating-back").length) {
@@ -63,6 +110,7 @@
             arrows: false,
             infinite: true,
             speed: 600,
+            adaptiveHeight: true,
             initialSlide: 1,
             slidesToShow: 1,
             slidesToScroll: 1,

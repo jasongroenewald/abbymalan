@@ -587,6 +587,35 @@ input[type=text], input[type=email], optgroup, select, textarea {
 	text-align: left !important;
 }
 
+.prev-post, .next-post {
+	a {
+		display: block;
+		@include animation();
+
+		&:hover {
+			@include animation();
+
+			h3 {
+				@include animation();
+				color: $primary;
+			}	
+		}
+	}
+
+	h3 {
+		@include animation();
+		color: $content;
+	}
+}
+
+.prev-post {
+	text-align: left;
+}
+
+.next-post {
+	text-align: right;
+}
+
 .contact-details {
 	a {
 		display: block; 
@@ -601,8 +630,25 @@ input[type=text], input[type=email], optgroup, select, textarea {
 	}
 }
 
+.span-meta-upper {
+	margin-bottom: 15px;
+}
+
+.span-meta-lower {
+	width: 100%;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 13px;
+	margin-bottom: 0 !important;
+	font-family: 'Source Sans Pro',sans-serif;
+}
+
 .meta-row {
 	margin-top: 60px;
+
+	.button {
+		margin-top: 0 !important;
+	}
 
 	&.center {
 		text-align: center;
