@@ -263,7 +263,7 @@ window.CMB2 = window.CMB2 || {};
 			if ( attachment.type && attachment.type === 'image' ) {
 				// image preview
 				var width = media.previewSize[0] ? media.previewSize[0] : 350;
-				uploadStatus = '<div class="img-status cmb2-media-item"><img width="'+ width +'px" style="max-width: '+ width +'px; width: 100%; height: auto;" src="' + attachment.url + '" alt="'+ attachment.filename +'" "'+ attachment.filename +'" /><p><a href="#" class="cmb2-remove-file-button" rel="' + media.field + '">'+ l10n.strings.remove_image +'</a></p></div>';
+				uploadStatus = '<div class="img-status cmb2-media-item"><img width="'+ width +'px" style="max-width: '+ width +'px; width: 100%; height: auto;" src="' + attachment.url + '" alt="'+ attachment.filename +'" title="'+ attachment.filename +'" /><p><a href="#" class="cmb2-remove-file-button" rel="' + media.field + '">'+ l10n.strings.remove_image +'</a></p></div>';
 			} else {
 				// Standard generic output if it's not an image.
 				uploadStatus = '<div class="file-status cmb2-media-item"><span>'+ l10n.strings.file +' <strong>'+ attachment.filename +'</strong></span>&nbsp;&nbsp; (<a href="'+ attachment.url +'" target="_blank" rel="external">'+ l10n.strings.download +'</a> / <a href="#" class="cmb2-remove-file-button" rel="'+ media.field +'">'+ l10n.strings.remove_file +'</a>)</div>';

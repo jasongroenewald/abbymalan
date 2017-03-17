@@ -6,6 +6,12 @@
 	}
 }
 
+@mixin animation() {
+	-webkit-transition: all .1s ease-in-out;
+	-o-transition: all .1s ease-in-out;
+	transition: all .1s ease-in-out;
+}
+
 @mixin content_padding() {
 	@media (max-width: $screen-xs-max) {
 		padding: 60px 0;
@@ -104,6 +110,10 @@ html, body {
 	letter-spacing: 0.8px;
 	font-weight: 300;
 	@include mq(font-size, "13px",'',"13px",'',"14px","14px");
+
+	&.freeze {
+		overflow: hidden !important;
+	}
 
 	&.center {
 		#body {
@@ -257,13 +267,12 @@ hr {
 }
 
 .overlay {
-	display: none;
-	-webkit-animation: fade 500ms;
-	animation: fade 500ms;
+	opacity: 0;
+	@include animation();
 	background-color: rgba(0,0,0,0);
 
 	&.active {
-	    display: block;
+	    opacity: 1;
 	    position: fixed;
 	    top: 0;
 	    right: 0;
@@ -271,15 +280,14 @@ hr {
 	    left: 0;
 	    z-index: 9998;
 	    background-color: rgba(0,0,0,0.5);
-	    -webkit-animation: fade 500ms;
-	    animation: fade 500ms;
+	   	@include animation();
     }
 }
 
 #overflow-menu {
 	background: white;
 	position: fixed;
-    width: 300px;
+    width: 350px;
     height: 100%;
     top: 0;
     left: 0;
@@ -288,8 +296,8 @@ hr {
     visibility: hidden;
     -webkit-overflow-scrolling: touch;
 	
-	-webkit-transform: translate3d(-300px, 0, 0);
-    transform: translate3d(-300px, 0, 0);			
+	-webkit-transform: translate3d(-350px, 0, 0);
+    transform: translate3d(-350px, 0, 0);			
 
 	-webkit-transition: -webkit-transform 400ms cubic-bezier(0.16, 0.68, 0.43, 0.99);
 	transition: transform 400ms cubic-bezier(0.16, 0.68, 0.43, 0.99);
@@ -311,7 +319,7 @@ hr {
 			@include stack();
 
 			li {
-				padding: 10px 0;
+				padding: 20px 0;
 
 				&:first-of-type {
 					padding-top: 0 !important;
@@ -321,18 +329,31 @@ hr {
 			a {
 				color: $content;
 				font-family: 'Source Sans Pro', sans-serif;
-				font-weight: bold;
+				font-weight: 400;
 				text-transform: uppercase;
-				@include mq(font-size, "10px",'',"12px",'',"13px","11px");
+				@include mq(font-size, "10px",'',"12px",'',"13px","13px");
 			}
 		}
 	}
 }
 
-@mixin animation() {
-	-webkit-transition: all .1s ease-in-out;
-	-o-transition: all .1s ease-in-out;
-	transition: all .1s ease-in-out;
+#close-menu {
+	width: 100%;
+	display: block;
+	padding: 30px;
+	border-top: 1px solid rgba($border,0.2);
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 11px;
+	@include animation();
+	letter-spacing: .8px;
+	cursor: pointer;
+	font-family: 'Source Sans Pro', sans-serif;
+
+	&:hover {
+		@include animation();
+		color: $primary;
+	}
 }
 
 @mixin global_border_radius() {

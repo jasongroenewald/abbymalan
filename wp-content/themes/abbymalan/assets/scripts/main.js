@@ -45,6 +45,8 @@
 
         $( window ).resize(function() {
             balanceHeight();
+
+            equalHeight("#related .inner");
         });
 
         $('a[href*="#"]:not([href="#"]):not(blank)').click(function() {
@@ -98,10 +100,22 @@
         }
 
         $("#menu_toggle").click(function() {
+            $("#overflow-menu").addClass('open');
+            $(".overlay").addClass('active');
+            $("body,html").addClass('freeze');
+        });
 
-              $("#overflow-menu").addClass('open');
-              $(".overlay").addClass('active');
-          });
+        $("#close-menu").click(function() {
+            $("#overflow-menu").removeClass('open');
+            $(".overlay").removeClass('active');
+            $("body,html").removeClass('freeze');
+        });
+
+        $(".overlay").click(function() {
+            $("#overflow-menu").removeClass('open');
+            $(this).removeClass('active');
+            $("body,html").removeClass('freeze');
+        });
 
         if( $("#testimonial-slider").length) {
 

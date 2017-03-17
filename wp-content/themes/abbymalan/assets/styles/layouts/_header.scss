@@ -65,10 +65,32 @@
 		-webkit-transition: margin-top ease 350ms;
 		transition: margin-top ease 350ms;
 		cursor: pointer;
-		height: 13px;
 		display: inline-block;
 		vertical-align: middle;
 		margin-right: 30px;
+
+		.icon-container {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		p {
+			@media (min-width: $screen-sm-min) {
+				display: inline-block;
+				vertical-align: middle;
+				margin-left: 10px;
+				margin-bottom: 0 !important;
+				color: $content;
+				font-weight: 400;
+				font-size: 12px;
+				text-transform: uppercase;
+				font-family: 'Source Sans Pro', sans-serif;
+			}
+
+			@media (max-width: $screen-xs-max) {
+				display: none;
+			}
+		}
 
 		&:hover {
 			span {
@@ -85,7 +107,7 @@
 
 		span {	
 			cursor: pointer;
-			top: 6px;
+			top: 0;
 			height: 2px;
 			width: 25px;
 			background-color: $content;
