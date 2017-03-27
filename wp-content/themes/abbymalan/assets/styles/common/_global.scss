@@ -297,7 +297,16 @@ hr {
     -webkit-overflow-scrolling: touch;
 	
 	-webkit-transform: translate3d(-350px, 0, 0);
-    transform: translate3d(-350px, 0, 0);			
+    transform: translate3d(-350px, 0, 0);		
+
+    .sub-menu {
+		margin-top: 20px !important;
+		margin-left: 15px !important;
+
+		a { 
+			text-transform: initial !important;
+		}
+    }	
 
 	-webkit-transition: -webkit-transform 400ms cubic-bezier(0.16, 0.68, 0.43, 0.99);
 	transition: transform 400ms cubic-bezier(0.16, 0.68, 0.43, 0.99);
@@ -313,6 +322,8 @@ hr {
 	.inner {
 		overflow-y: scroll;
 		padding: 30px;
+		max-height: 100vh;
+		padding-bottom: 88px !important;
 
 		ul {
 			@include clear();
@@ -331,7 +342,7 @@ hr {
 				font-family: 'Source Sans Pro', sans-serif;
 				font-weight: 400;
 				text-transform: uppercase;
-				@include mq(font-size, "10px",'',"12px",'',"13px","13px");
+				@include mq(font-size, "11px",'',"12px",'',"13px","13px");
 			}
 		}
 	}
@@ -340,8 +351,8 @@ hr {
 #close-menu {
 	width: 100%;
 	display: block;
-	padding: 30px;
-	border-top: 1px solid rgba($border,0.2);
+	padding: 20px;
+	font-weight: bold;
 	text-align: center;
 	text-transform: uppercase;
 	font-size: 11px;
@@ -349,6 +360,11 @@ hr {
 	letter-spacing: .8px;
 	cursor: pointer;
 	font-family: 'Source Sans Pro', sans-serif;
+	position: absolute;
+    bottom: 0;
+    left: 0;
+    background: $primary;
+    color: white !important;
 
 	&:hover {
 		@include animation();
@@ -646,7 +662,7 @@ input[type=text], input[type=email], optgroup, select, textarea {
 }
 
 .current-menu-item, .current-page-ancestor {
-	a {
+	& > a {
 		color: $primary !important;
 	}
 }

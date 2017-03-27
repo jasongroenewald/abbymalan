@@ -26,7 +26,7 @@
 
 	h1 {
 		text-align: center;	
-		color: $content;
+		color: white;
 		@include mq(font-size, "36px",'',"38px",'',"48px","55px");
 	}
 }
