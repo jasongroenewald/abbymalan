@@ -1,0 +1,126 @@
+#meta-footer {
+	border-top: 1px solid #E1E0E1;
+	@include content_padding_alt();
+	text-align: center;
+	background: white;
+
+	.sub-menu {
+		display: none !important;
+	}
+
+	ul {
+		@include clear();
+		@include stack();
+		display: inline-block;
+
+		li {	
+			display: inline-block;
+			vertical-align: middle;
+
+			@media (max-width: $screen-xs-max) {
+				padding: 10px 0;
+				text-align: center;
+			}
+
+			@media (min-width: $screen-sm-min) {
+				margin-right: 60px;
+
+				&:last-of-type {
+					margin-right: 0 !important;
+				}
+			}
+
+			@media (max-width: $screen-xs-max) {
+				width: 100%;
+			}
+
+			a {
+				color: $primary;
+				font-family: 'Source Sans Pro', sans-serif;
+				font-weight: bold;
+				text-transform: uppercase;
+				@include mq(font-size, "10px",'',"10px",'',"11px","12px");
+				@include animation();
+				cursor: pointer;
+
+				&:hover {
+					color: $content;
+					@include animation();
+				}
+			}
+		}
+	}
+}
+
+#footer {
+	background: white;
+	border-top: 1px solid #E1E0E1;
+	padding: 40px 0;
+	text-align: center;
+	border-bottom: 5px solid $primary;
+
+	.legal {
+		@media (max-width: $screen-xs-max) {
+			text-align: center;
+
+			p {
+				text-align: center;
+			}
+		}
+		
+		@media (min-width: $screen-sm-min) {
+			text-align: left;
+
+			p {
+				text-align: left;
+			}
+		}
+	}
+
+	p, a {
+		color: darken($chalice,20%);
+		@include mq(font-size, "10px",'',"10px",'',"11px","11px");
+		font-family: 'Source Sans Pro', sans-serif;
+	}
+
+	.social-media-company {
+		@include clear();
+		@include stack();
+		display: inline-block;
+
+		@media (max-width: $screen-xs-max) {
+			margin-top: 30px !important;
+		}
+
+		li {	
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0 10px;
+
+			&:hover {
+				a, .fa {
+					background: $content;
+					box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.4);
+					-webkit-box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.4);
+					-moz-box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.4);
+					@include animation();
+				}
+			}
+
+			a, .fa {
+				padding: 13px 0;
+				width: 51px;
+				font-size: 25px;
+				color: white;
+				@include animation();
+				background: $primary;
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+				box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.2);
+				-webkit-box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.2);
+				-moz-box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.2);
+			}
+		}
+	}
+}
