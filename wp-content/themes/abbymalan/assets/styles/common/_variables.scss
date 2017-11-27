@@ -1,0 +1,16 @@
+// Grid settings
+$enable-flex:           true;
+$main-sm-columns:       12;
+$sidebar-sm-columns:    4;
+
+// Colors
+$brand-primary:         #636363;
+$primary:         		$brand-primary;
+
+$content: 				#393F44;
+$border: 				lighten($content,60%);
+
+$wedgewood:				#41476B;
+$cloud:					#98878F;
+$athens:				#ffffff;
+$chalice:				#bcbbbb;
